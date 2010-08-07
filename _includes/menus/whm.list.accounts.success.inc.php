@@ -1,0 +1,1 @@
+&nbsp;&nbsp;[ <a href="index.php">back</a> ]&nbsp;&nbsp;[ <a href="list-accounts.php">refresh</a> ]
