@@ -61,10 +61,47 @@ echo "No DNS zones exist.";
 ?>
 <BR><BR>
 
-<BR><strong>Maintenance</strong><BR>
+<BR><font class="section_heading">Maintenance</font><BR>
 <font class="list_marker"><?=$list_marker?></font><a target="_blank" href="cron/index.php">Rebuild Data Warehouse</a><BR>
 Depending on the amount of information stored on your server, this could take a few minutes to complete.<BR><BR>
-If you're going to use the DW regularly, you can also setup a cron job to /cron/index.php.
+If you're going to use the DW regularly, you can also setup a cron job to /cron/index.php.<BR><BR>
+
+<font class="list_marker"><?=$list_marker?></font><strong>Accounts Without A DNS Zone</strong><BR>
+<?php
+$sql = "select domain
+		from _dw_whm_accounts
+		where domain not in (select domain from _dw_whm_dns_zones)
+		order by domain asc";
+$result = mysql_query($sql,$connection) or die(mysql_error());
+while ($row = mysql_fetch_object($result)) {
+	$account_list_raw .= $row->domain . ", ";
+}
+$account_list = substr($account_list_raw, 0, -2);
+if ($account_list != "") { 
+	echo $account_list;
+} else {
+	echo "n/a";
+}
+?><BR><BR>
+
+<font class="list_marker"><?=$list_marker?></font><strong>DNS Zones Without An Account</strong><BR>
+<?php
+$sql = "select domain
+		from _dw_whm_dns_zones
+		where domain not in (select domain from _dw_whm_accounts)
+		order by domain asc";
+$result = mysql_query($sql,$connection) or die(mysql_error());
+while ($row = mysql_fetch_object($result)) {
+	$zone_list_raw .= $row->domain . ", ";
+}
+$zone_list = substr($zone_list_raw, 0, -2);
+
+if ($zone_list != "") { 
+	echo $zone_list;
+} else {
+	echo "n/a";
+}
+?><BR><BR>
 
 <?php include($full_server_path . "_includes/footer.inc.php"); ?>
 </body>
