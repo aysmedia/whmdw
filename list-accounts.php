@@ -8,6 +8,10 @@
 <?php include($full_server_path . "_includes/code/pagination.function.inc.php"); ?>
 </head>
 <body onLoad="document.forms[0].elements[0].focus()";>
+<?php
+$domain = $_GET['domain'];
+$search_for = $_POST['search_for'];
+?>
 <?php include($full_server_path . "_includes/header.inc.php"); ?>
 <?php
 if ($domain != "") {
