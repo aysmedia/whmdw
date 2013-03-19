@@ -7,7 +7,7 @@
 
 
 # About
-The WHM Data Warehouse is just that, a Data Warehouse for WHM (Web Host Manager), as well as cPanel, written in PHP & MySQL. For more information on either of these products please see the 'References' section below.  
+WHM Data Warehouse is just that, a data warehouse for WHM (Web Host Manager), as well as cPanel, written in PHP & MySQL. For more information on either of these products please see the 'References' section below.  
 
 A client of ours wanted us to create a small web app that amongst other things would allow them to create new email addresses at one of their domains, without requiring WHM or cPanel access. This would allow them to have any employee create new email addresses, since they would have minimal access and could not do anything to mess up WHM or cPanel.  
 
