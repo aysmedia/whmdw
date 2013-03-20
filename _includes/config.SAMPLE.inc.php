@@ -41,11 +41,11 @@ $whm_hash = "";
 $section_heading = "WHM Data Warehouse";
 $section_heading_build_dw = "$section_heading - Rebuild Data Warehouse";
 $section_heading_list_accounts = "$section_heading - List Accounts";
-$section_heading_list_accounts_success = "$section_heading - List Of Accounts On $whm_hostname";
-$section_heading_list_accounts_failure = "$section_heading - Unable To List Accounts";
+$section_heading_list_accounts_success = "$section_heading - List of Accounts on $whm_hostname";
+$section_heading_list_accounts_failure = "$section_heading - Unable to List Accounts";
 $section_heading_list_dns = "$section_heading - List DNS Zones";
-$section_heading_list_dns_success = "$section_heading - List Of DNS Zones On $whm_hostname";
-$section_heading_list_dns_failure = "$section_heading - Unable To List DNS Zones";
+$section_heading_list_dns_success = "$section_heading - List of DNS Zones on $whm_hostname";
+$section_heading_list_dns_failure = "$section_heading - Unable to List DNS Zones";
 
 // Misc
 $list_marker = "# ";
