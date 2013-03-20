@@ -78,7 +78,7 @@ if ($result) {
 ?>
 <BR><BR>
 <BR><font class="section_heading">Maintenance</font><BR>
-<font class="list_marker"><?=$list_marker?></font><a target="_blank" href="build.php">Rebuild Data Warehouse</a><BR>
+<font class="list_marker"><?=$list_marker?></font><a href="build.php">Rebuild Data Warehouse</a><BR>
 Depending on the amount of information stored on your server, this could take a few minutes to complete.<BR><BR>
 If you're going to use the DW regularly, you can also setup a cron job to /cron/index.php.<BR><BR>
 
