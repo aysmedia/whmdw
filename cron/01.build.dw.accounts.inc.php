@@ -49,14 +49,22 @@ $sql = "CREATE TABLE IF NOT EXISTS _dw_whm_accounts (
 
 $result = mysql_query($sql,$connection) or die(mysql_error());
 
-$api_call = "/xml-api/listaccts?searchtype=domain&search=";
-include("../_includes/code/api/whm.api.call.inc.php"); 
-$xml = simplexml_load_string($result);
+if ($_SERVER['HTTP_HOST'] != "demos.aysmedia.com") {
 
-foreach($xml->acct as $hit){
+	$api_call = "/xml-api/listaccts?searchtype=domain&search=";
+	include("../_includes/code/api/whm.api.call.inc.php"); 
+	$xml = simplexml_load_string($result);
 
-	$sql = "insert into _dw_whm_accounts (domain, ip, owner, user, email, disklimit, diskused, partition, maxaddons, maxftp, maxlst, maxparked, maxpop, maxsql, maxsub, plan, theme, shell, startdate, unix_startdate, suspended, suspendreason, suspendtime) values('$hit->domain', '$hit->ip', '$hit->owner', '$hit->user', '$hit->email', '$hit->disklimit', '$hit->diskused', '$hit->partition', '$hit->maxaddons', '$hit->maxftp', '$hit->maxlst', '$hit->maxparked', '$hit->maxpop', '$hit->maxsql', '$hit->maxsub', '$hit->plan', '$hit->theme', '$hit->shell', '$hit->startdate', '$hit->unix_startdate', '$hit->suspended', '$hit->suspendreason', '$hit->suspendtime')";
-	$result = mysql_query($sql,$connection) or die(mysql_error());
+	foreach($xml->acct as $hit){
+	
+		$sql = "insert into _dw_whm_accounts (domain, ip, owner, user, email, disklimit, diskused, partition, maxaddons, maxftp, maxlst, maxparked, maxpop, maxsql, maxsub, plan, theme, shell, startdate, unix_startdate, suspended, suspendreason, suspendtime) values('$hit->domain', '$hit->ip', '$hit->owner', '$hit->user', '$hit->email', '$hit->disklimit', '$hit->diskused', '$hit->partition', '$hit->maxaddons', '$hit->maxftp', '$hit->maxlst', '$hit->maxparked', '$hit->maxpop', '$hit->maxsql', '$hit->maxsub', '$hit->plan', '$hit->theme', '$hit->shell', '$hit->startdate', '$hit->unix_startdate', '$hit->suspended', '$hit->suspendreason', '$hit->suspendtime')";
+		$result = mysql_query($sql,$connection) or die(mysql_error());
+	
+	}
+
+} else {
+
+	
 
 }
 ?>

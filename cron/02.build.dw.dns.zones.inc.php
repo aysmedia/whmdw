@@ -28,14 +28,22 @@ $sql = "CREATE TABLE IF NOT EXISTS _dw_whm_dns_zones (
 
 $result = mysql_query($sql,$connection) or die(mysql_error());
 
-$api_call = "/xml-api/listzones";
-include("../_includes/code/api/whm.api.call.inc.php"); 
-$xml = simplexml_load_string($result);
+if ($_SERVER['HTTP_HOST'] != "demos.aysmedia.com") {
 
-foreach($xml->zone as $hit){
+	$api_call = "/xml-api/listzones";
+	include("../_includes/code/api/whm.api.call.inc.php"); 
+	$xml = simplexml_load_string($result);
+	
+	foreach($xml->zone as $hit){
+	
+		$sql = "insert into _dw_whm_dns_zones (domain, zonefile) values('$hit->domain', '$hit->zonefile')";
+		$result = mysql_query($sql,$connection) or die(mysql_error());
+	
+	}
 
-	$sql = "insert into _dw_whm_dns_zones (domain, zonefile) values('$hit->domain', '$hit->zonefile')";
-	$result = mysql_query($sql,$connection) or die(mysql_error());
+} else {
+	
+	
 
 }
 ?>
