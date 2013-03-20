@@ -16,26 +16,54 @@
 // please see http://www.gnu.org/licenses/
 ?>
 <?php
-// Full server path to WHM DW
-$full_server_path = "";
+// Full server path to WHM DW (don't include trailing slash)
+$full_server_path = "/home/user/public_html/whmdw";
 
 // MySQL database where the WHM DW data will be stored
 $dbhostname = "localhost";
-$dbname = "";
-$dbusername = "";
-$dbpassword = "";
+$dbname = "db_name";
+$dbusername = "db_username";
+$dbpassword = "dbPassword123!";
 
 // Your WHM Settings
 $whm_protocol = "https"; // http for unsecure, https for secure
-$whm_hostname = ""; // you server's hostname
+$whm_hostname = "yourwhmurl.goeshere.com"; // you server's hostname
 $whm_port = "2087"; // Usually 2087 for secure (https) and 2086 for unsecure (http)
-$whm_username = "";
-$whm_password = "";
+$whm_username = "whm_username";
+$whm_password = "whm_password";
 
 // To get your WHM HASH, login to your WHM and follow these steps.
 // Under the 'Cluster/Remote Access' heading on the left, click on 'Setup Remote Access Key'
 // Copy and paste the displayed key into the $whm_hash variable below
-$whm_hash = "";
+$whm_hash = "9439sldfj93l2kjsdlfkjsk3sd9f93jd
+9439sldfj93l2kjsdlfkjsk3sd9f93jd
+9439sldfj93l2kjsdlfkjsk3sd9f93jd
+9439sldfj93l2kjsdlfkjsk3sd9f93jd
+9439sldfj93l2kjsdlfkjsk3sd9f93jd
+9439sldfj93l2kjsdlfkjsk3sd9f93jd
+9439sldfj93l2kjsdlfkjsk3sd9f93jd
+9439sldfj93l2kjsdlfkjsk3sd9f93jd
+9439sldfj93l2kjsdlfkjsk3sd9f93jd
+9439sldfj93l2kjsdlfkjsk3sd9f93jd
+9439sldfj93l2kjsdlfkjsk3sd9f93jd
+9439sldfj93l2kjsdlfkjsk3sd9f93jd
+9439sldfj93l2kjsdlfkjsk3sd9f93jd
+9439sldfj93l2kjsdlfkjsk3sd9f93jd
+9439sldfj93l2kjsdlfkjsk3sd9f93jd
+9439sldfj93l2kjsdlfkjsk3sd9f93jd
+9439sldfj93l2kjsdlfkjsk3sd9f93jd
+9439sldfj93l2kjsdlfkjsk3sd9f93jd
+9439sldfj93l2kjsdlfkjsk3sd9f93jd
+9439sldfj93l2kjsdlfkjsk3sd9f93jd
+9439sldfj93l2kjsdlfkjsk3sd9f93jd
+9439sldfj93l2kjsdlfkjsk3sd9f93jd
+9439sldfj93l2kjsdlfkjsk3sd9f93jd
+9439sldfj93l2kjsdlfkjsk3sd9f93jd
+9439sldfj93l2kjsdlfkjsk3sd9f93jd
+9439sldfj93l2kjsdlfkjsk3sd9f93jd
+9439sldfj93l2kjsdlfkjsk3sd9f93jd
+9439sldfj93l2kjsdlfkjsk3sd9f93jd
+9439sldfj93l2kjsdlfkjsk3sd9f93jd";
 
 // Headings
 $section_heading = "WHM Data Warehouse";
