@@ -120,7 +120,7 @@ echo "</td>";
 				"<strong>Contact:</strong> " . $row->email . "<BR>" . 
 				"<strong>IP Address:</strong> " . $row->ip . "<BR> " .
 				"<strong>Hosting Plan:</strong> " . $row->plan . "<BR>" . 
-				"<strong>CPANEL Theme:</strong> " . $row->theme . "<BR>" . 
+				"<strong>cPanel Theme:</strong> " . $row->theme . "<BR>" . 
 				"<strong>User, Owner:</strong> " . $row->user . ", " . $row->owner . "<BR><BR>" . 
 			"</td>";
 

@@ -25,11 +25,6 @@ $dbname = "";
 $dbusername = "";
 $dbpassword = "";
 
-// Your CPANEL Settings
-$cpanel_protocol = "https"; // http for unsecure, https for secure
-$cpanel_hostname = ""; // you server's hostname
-$cpanel_port = "2083"; // Usually 2083 for secure (https) and 2082 for unsecure (http)
-
 // Your WHM Settings
 $whm_protocol = "https"; // http for unsecure, https for secure
 $whm_hostname = ""; // you server's hostname
