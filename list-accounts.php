@@ -15,21 +15,21 @@
 // You should have received a copy of the GNU General Public License along with WHM Data Warehouse. If not,
 // please see http://www.gnu.org/licenses/
 ?>
-<?php include($full_server_path . "_includes/auth/session-start.inc.php"); ?>
-<?php include($full_server_path . "_includes/auth/login-check.inc.php"); ?>
-<?php include($full_server_path . "_includes/top.inc.php"); ?>
-<?php include($full_server_path . "_includes/config.inc.php"); ?>
-<?php include($full_server_path . "_includes/database.inc.php"); ?>
+<?php include($full_server_path . "/_includes/auth/session-start.inc.php"); ?>
+<?php include($full_server_path . "/_includes/auth/login-check.inc.php"); ?>
+<?php include($full_server_path . "/_includes/top.inc.php"); ?>
+<?php include($full_server_path . "/_includes/config.inc.php"); ?>
+<?php include($full_server_path . "/_includes/database.inc.php"); ?>
 <html>
-<head><?php include($full_server_path . "_includes/head-tags.inc.php"); ?>
-<?php include($full_server_path . "_includes/code/pagination.function.inc.php"); ?>
+<head><?php include($full_server_path . "/_includes/head-tags.inc.php"); ?>
+<?php include($full_server_path . "/_includes/code/pagination.function.inc.php"); ?>
 </head>
 <body onLoad="document.forms[0].elements[0].focus()";>
 <?php
 $domain = $_GET['domain'];
 $search_for = $_POST['search_for'];
 ?>
-<?php include($full_server_path . "_includes/header.inc.php"); ?>
+<?php include($full_server_path . "/_includes/header.inc.php"); ?>
 <?php
 if ($domain != "") {
 
@@ -77,7 +77,7 @@ $result = mysql_query($sql,$connection) or die(mysql_error());
 if($result) {
 
 	?>
-	<font class="section_heading"><?=$section_heading_list_accounts_success?></font><?php include($full_server_path . "_includes/menus/whm.list.accounts.success.inc.php"); ?>
+	<font class="section_heading"><?=$section_heading_list_accounts_success?></font><?php include($full_server_path . "/_includes/menus/whm.list.accounts.success.inc.php"); ?>
 	<BR><BR>
     <form name="form1" method="post" action="<?=$PHP_SELF?>">
         <input type="text" name="search_for" size="8" value="<?=$search_for?>"><BR>
@@ -88,7 +88,7 @@ if($result) {
 	echo "<strong>Number of Accounts:</strong> $totalrows<BR>";
 	?>
 
-	<?php include($full_server_path . "_includes/code/pagination.menu.inc.php"); ?>
+	<?php include($full_server_path . "/_includes/code/pagination.menu.inc.php"); ?>
 
     <table border="<?php if ($border == "1") { echo "1"; } else { echo "0"; } ?>">
     	<tr>
@@ -158,15 +158,15 @@ if($result) {
 } else {
 
 	?>
-	<font class="section_heading"><?=$section_heading_list_accounts_failure?></font><?php include($full_server_path . "_includes/menus/whm.list.accounts.failure.inc.php"); ?>
+	<font class="section_heading"><?=$section_heading_list_accounts_failure?></font><?php include($full_server_path . "/_includes/menus/whm.list.accounts.failure.inc.php"); ?>
 	<BR><BR>
 	<?php
 	print_r($test->errors);
 
 }
 ?>
-<?php include($full_server_path . "_includes/code/pagination.menu.inc.php"); ?>
+<?php include($full_server_path . "/_includes/code/pagination.menu.inc.php"); ?>
 <BR>
-<?php include($full_server_path . "_includes/footer.inc.php"); ?>
+<?php include($full_server_path . "/_includes/footer.inc.php"); ?>
 </body>
 </html>
