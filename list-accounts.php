@@ -66,21 +66,23 @@ if ($domain != "") {
 				order by unix_startdate desc";
 	
 	}
+
 }
+
 $totalrows = mysql_num_rows(mysql_query($sql));
 $navigate = pageBrowser($totalrows,15,10,"&search_for=$search_for",$_GET[numBegin],$_GET[begin],$_GET[num]);
 $sql = $sql.$navigate[0];
 $result = mysql_query($sql,$connection) or die(mysql_error());
 
-if($result)
-{
+if($result) {
+
 	?>
 	<font class="section_heading"><?=$section_heading_list_accounts_success?></font><?php include($full_server_path . "_includes/menus/whm.list.accounts.success.inc.php"); ?>
 	<BR><BR>
-<form name="form1" method="post" action="<?=$PHP_SELF?>">
-    <input type="text" name="search_for" size="8" value="<?=$search_for?>"><BR>
-    <input type="image" border="0" src="images/invisible-pixel.gif" alt="Search" name="submit">
-</form>
+    <form name="form1" method="post" action="<?=$PHP_SELF?>">
+        <input type="text" name="search_for" size="8" value="<?=$search_for?>"><BR>
+        <input type="image" border="0" src="images/invisible-pixel.gif" alt="Search" name="submit">
+    </form>
 
 	<?php
 	echo "<strong>Number of Accounts:</strong> $totalrows<BR>";
@@ -96,25 +98,27 @@ if($result)
         	<td width="190">&nbsp;</td>
         	<td>&nbsp;</td>
 		</tr>
+	<?php
 
-<?php
 	while ($row = mysql_fetch_object($result)) {
-$visible_domain = wordwrap($row->domain, 20, "<BR>", true);
+
+		$visible_domain = wordwrap($row->domain, 20, "<BR>", true);
 		echo "<tr height=\"75\" valign=\"top\" onMouseOver=\"this.bgColor='" . $table_highlight_color . "';\" onMouseOut=\"this.bgColor='#FFFFFF';\">";
 		echo "<td><font class=\"list_marker\">" . $list_marker . "</font><!a target=\"_blank\" href=\"http://" . $row->domain . "\"><strong>" . $visible_domain . "</strong><!/a><BR>";
 
 
-$sql_zone = "select zonefile
-			 from _dw_whm_dns_zones
-			 where domain = '$row->domain'";
-$result_zone = mysql_query($sql_zone,$connection);
-while ($row_zone = mysql_fetch_object($result_zone)) {
-	$visible_zonefile = wordwrap($row_zone->zonefile, 20, "<BR>", true);
-}
+		$sql_zone = "select zonefile
+					 from _dw_whm_dns_zones
+					 where domain = '$row->domain'";
+		$result_zone = mysql_query($sql_zone,$connection);
+
+		while ($row_zone = mysql_fetch_object($result_zone)) {
+			$visible_zonefile = wordwrap($row_zone->zonefile, 20, "<BR>", true);
+		}
 
 		echo "<BR><strong>DNS Zone:</strong><BR><a class=\"covert_link\" href=\"list-dns-zones.php?domain=$row->domain\">" . $visible_zonefile . "</a>";
 
-echo "</td>";
+		echo "</td>";
 		echo "<td>" . 
 				"<strong>Created:</strong> " . date("Y M jS", $row->unix_startdate) . "<BR>" . 
 				"<strong>Contact:</strong> " . $row->email . "<BR>" . 
@@ -147,18 +151,18 @@ echo "</td>";
 			"</td>";
 		echo "</tr>";
 	}
-//	}
-?>
-</table>
-<?php
-}
-else
-{
+	?>
+	</table>
+	<?php
+
+} else {
+
 	?>
 	<font class="section_heading"><?=$section_heading_list_accounts_failure?></font><?php include($full_server_path . "_includes/menus/whm.list.accounts.failure.inc.php"); ?>
 	<BR><BR>
 	<?php
 	print_r($test->errors);
+
 }
 ?>
 <?php include($full_server_path . "_includes/code/pagination.menu.inc.php"); ?>

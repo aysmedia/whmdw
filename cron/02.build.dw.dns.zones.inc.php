@@ -43,7 +43,11 @@ if ($_SERVER['HTTP_HOST'] != "demos.aysmedia.com") {
 
 } else {
 	
-	
+	$sql = "insert into _dw_whm_dns_zones (domain, zonefile) VALUES
+			('aysmedia.com', 'aysmedia.com.db'),
+			('aysmedia.ca', 'aysmedia.ca.db'),
+			('ays.me', 'ays.me.db');";
+	$result = mysql_query($sql,$connection) or die(mysql_error());
 
 }
 ?>
