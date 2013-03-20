@@ -7,15 +7,15 @@
 
 
 # About
-WHM Data Warehouse is just that, a data warehouse for WHM (Web Host Manager), as well as cPanel, written in PHP & MySQL. For more information on either of these products please see the 'References' section below.  
+WHM Data Warehouse is just that, a data warehouse for WHM (Web Host Manager) written in PHP & MySQL. For more information on either of these products please see the 'References' section below.  
 
 A client of ours wanted us to create a small web app that amongst other things would allow them to create new email addresses at one of their domains, without requiring WHM or cPanel access. This would allow them to have any employee create new email addresses, since they would have minimal access and could not do anything to mess up WHM or cPanel.  
 
-While we were creating the app, we found it much easier and safer to just import entire sections of the WHM & cPanel into a local database, and then manipulate the information there. This means that we weren't working on the actual WHM database, completely eliminating the chances of us harming live data.  
+While we were creating the app, we found it much easier and safer to just import entire sections of the WHM into a local database, and then manipulate the information there. This means that we weren't working on the actual WHM database, completely eliminating the chances of us harming live data.  
 
 And just like that, the WHM Data Warehouse was born. We figured if we can benefit from this application, others may be able to as well.  
 
-As this project is in its infancy, not all available WHM & cPanel information is pulled into the data warehouse. To see which information is currently being retrieved please see the 'Currently Supported' section below.  
+As this project is in its infancy, not all available WHM information is pulled into the data warehouse. To see which information is currently being retrieved please see the 'Currently Supported' section below.  
 
 
 # Live Demo
@@ -83,7 +83,7 @@ You have two options for upgrading the WHM Data Warehouse.
 
 
 # Currently Supported
-The following sections are currently supported, but our end goal is to have every piece of WHM & cPanel information that can be retrieved via API stored in the data warehouse. The more information in the data warehoue, the more information you have to work with.  
+The following sections are currently supported, but our end goal is to have every piece of WHM information that can be retrieved via API stored in the data warehouse. The more information in the data warehoue, the more information you have to work with.  
 
 ### ACCOUNTS
 The following information is retrieved from your WHM and stored in the "_dw_whm_accounts" table in your WHM DW.  
@@ -112,7 +112,7 @@ To report bugs, please visit http://github.com/aysmedia/whmdw/issues
 
 
 # License
-WHM Data Warehouse - A Data Warehouse for WHM (or Web Host Manager), as well as cPanel, written in PHP & MySQL.  
+WHM Data Warehouse - A Data Warehouse for WHM (or Web Host Manager) written in PHP & MySQL.  
 Copyright (C) 2010 Greg Chetcuti  
 
 WHM Data Warehouse is free software; you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation; either version 2 of the License, or (at your option) any later version.  
