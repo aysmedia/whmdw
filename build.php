@@ -40,7 +40,7 @@
 	include($full_server_path . "cron/03.build.dw.dns.records.inc.php"); 
 // ------------------------------------------------------------------------
 ?>
-<BR><BR><strong>whm data warehouse rebuilt.</strong>
+<BR><BR><strong>The WHM Data Warehouse has been rebuilt.</strong>
 <?php include($full_server_path . "_includes/footer.inc.php"); ?>
 </body>
 </html>

@@ -32,4 +32,4 @@
 	include("03.build.dw.dns.records.inc.php"); 
 // ------------------------------------------------------------------------
 ?>
-<BR>WHM Data Warehouse Rebuilt.
+The WHM Data Warehouse has been rebuilt.
