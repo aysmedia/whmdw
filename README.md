@@ -1,17 +1,16 @@
 # WHM Data Warehouse
     Project Home: http://aysmedia.com/code/whmdw/  
-    Project Demo: http://demos.aysmedia.com/whmdw/  
     Code Home: http://github.com/aysmedia/whmdw/  
-    Code Repository: git://github.com/aysmedia/whmdw.git  
-    Report Issues: http://github.com/aysmedia/whmdw/issues  
+    Project Demo: http://demos.aysmedia.com/whmdw/  
+    Report Issues: http://github.com/aysmedia/whmdw/issues/  
 
 
 # About
-WHM Data Warehouse is just that, a data warehouse for WHM (Web Host Manager) written in PHP & MySQL. For more information on either of these products please see the 'References' section below.  
+WHM Data Warehouse is just that, a data warehouse for WHM (Web Host Manager) written in PHP & MySQL. For more information on WHM please see the 'References' section below.  
 
 A client of ours wanted us to create a small web app that amongst other things would allow them to create new email addresses at one of their domains, without requiring WHM or cPanel access. This would allow them to have any employee create new email addresses, since they would have minimal access and could not do anything to mess up WHM or cPanel.  
 
-While we were creating the app, we found it much easier and safer to just import entire sections of the WHM into a local database, and then manipulate the information there. This means that we weren't working on the actual WHM database, completely eliminating the chances of us harming live data.  
+While we were creating the app we found it much easier and safer to just import entire sections of the WHM into a local database and then manipulate the information there. This means that we weren't working on the actual WHM database, completely eliminating the chances of us harming live data.  
 
 And just like that, the WHM Data Warehouse was born. We figured if we can benefit from this application, others may be able to as well.  
 
@@ -27,7 +26,7 @@ So go ahead, take our live demo for a test drive before you install! http://demo
 # Downloading
 You have two options for downloading the WHM Data Warehouse.  
 
-NOTE: Whenever possible, we recommend that you use option #1, the git repository download directly from your server.  
+NOTE: Whenever possible we recommend that you use option #1, the git repository download directly from your server.  
 
 1. Use git right from your server to retrieve the source code. To do so, change to the directory where you want to install and run the following command:  
 
@@ -45,9 +44,9 @@ NOTE: Whenever possible, we recommend that you use option #1, the git repository
 
 2. Create a MySQL database that will be used to store the WHM Data Warehouse information  
 
-3. In the '_includes' folder, copy config.SAMPLE.inc.php to config.inc.php, and then update config.inc.php to reflect your server's settings  
+3. In the '_includes' folder, copy config.SAMPLE.inc.php to config.inc.php and then update config.inc.php to reflect your server's settings  
 
-4. Open the WHM Data Warehouse in a web browser, and click on the "Rebuild Data Warehouse" link  
+4. Open the WHM Data Warehouse in a web browser and click on the "Rebuild Data Warehouse" link  
 
 5. A new window browser window will open, which will run a script that creates the initial data warehouse  
 
@@ -79,7 +78,7 @@ You have two options for upgrading the WHM Data Warehouse.
 
 2. Visit the following URL to download the most recent source code archive: https://github.com/aysmedia/whmdw/archive/master.zip  
 
-   Unpack the new archive overtop of where you installed the previous version.  
+   Them simply unpack the new archive overtop of where you installed the previous version.  
 
 
 # Currently Supported
@@ -108,11 +107,11 @@ WHM & cPanel: http://cpanel.net/products/cpanelwhm/
 # Support
 If you have any questions or comments please visit http://aysmedia.com or email us at code@aysmedia.com  
 
-To report bugs, please visit http://github.com/aysmedia/whmdw/issues  
+To report bugs, please visit http://github.com/aysmedia/whmdw/issues/  
 
 
 # License
-WHM Data Warehouse - A Data Warehouse for WHM (or Web Host Manager) written in PHP & MySQL.  
+WHM Data Warehouse - A simple Data Warehouse for WHM (Web Host Manager) written in PHP & MySQL.  
 Copyright (C) 2010 Greg Chetcuti  
 
 WHM Data Warehouse is free software; you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation; either version 2 of the License, or (at your option) any later version.  
