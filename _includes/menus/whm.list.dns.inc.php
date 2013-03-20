@@ -1,7 +1,7 @@
 <?php
 // whm.list.dns.inc.php
 // 
-// WHM Data Warehouse - A Data Warehouse application for WHM (Web Host Manager) written in PHP & MySQL.
+// WHM Data Warehouse - A web-based data warehouse application for WHM (Web Host Manager) written in PHP & MySQL.
 // Copyright (C) 2010 Greg Chetcuti
 // 
 // WHM Data Warehouse is free software; you can redistribute it and/or modify it under the terms of the GNU

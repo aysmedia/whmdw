@@ -5,7 +5,7 @@
 
 
 # About
-WHM Data Warehouse is a data warehouse application for WHM (Web Host Manager) written in PHP & MySQL. For more information on WHM please see the 'References' section below.  
+WHM Data Warehouse is a web-based data warehouse application for WHM (Web Host Manager) written in PHP & MySQL. For more information on WHM please see the 'References' section below.  
 
 A client of ours wanted us to create a small web app that amongst other things would allow them to create new email addresses at one of their domains, without requiring WHM or cPanel access. This would allow them to have any employee create new email addresses, since they would have minimal access and could not do anything to mess up WHM or cPanel.  
 
@@ -112,7 +112,7 @@ To report bugs, please visit http://github.com/aysmedia/whmdw/issues/
 
 
 # License
-WHM Data Warehouse - A Data Warehouse application for WHM (Web Host Manager) written in PHP & MySQL.  
+WHM Data Warehouse - A web-based data warehouse application for WHM (Web Host Manager) written in PHP & MySQL.  
 Copyright (C) 2010 Greg Chetcuti  
 
 WHM Data Warehouse is free software; you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation; either version 2 of the License, or (at your option) any later version.  
