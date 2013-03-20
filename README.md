@@ -1,12 +1,11 @@
 # WHM Data Warehouse
     Project Home: http://aysmedia.com/code/whmdw/  
-    Code Home: http://github.com/aysmedia/whmdw/  
     Project Demo: http://demos.aysmedia.com/whmdw/  
-    Report Issues: http://github.com/aysmedia/whmdw/issues/  
+    Code Home: http://github.com/aysmedia/whmdw/  
 
 
 # About
-WHM Data Warehouse is just that, a data warehouse for WHM (Web Host Manager) written in PHP & MySQL. For more information on WHM please see the 'References' section below.  
+WHM Data Warehouse is a data warehouse application for WHM (Web Host Manager) written in PHP & MySQL. For more information on WHM please see the 'References' section below.  
 
 A client of ours wanted us to create a small web app that amongst other things would allow them to create new email addresses at one of their domains, without requiring WHM or cPanel access. This would allow them to have any employee create new email addresses, since they would have minimal access and could not do anything to mess up WHM or cPanel.  
 
@@ -53,6 +52,8 @@ NOTE: Whenever possible we recommend that you use option #1, the git repository 
 6. If you want to see the progress on the data warehouse build you can flip back to the original window and hit refresh  
 
 7. Depending on how much information you have on your server it may take a few minutes for the build to complete  
+
+8. Since the WHM Data Warehouse project is in its infancy, we have not yet built an authentication system into the software. Because of this we highly recommend that you setup your own method of authentication on the installation folder, such as HTTP Authentication (http://en.wikipedia.org/wiki/Basic_access_authentication).  
 
 
 # Installation (Optional)
@@ -111,7 +112,7 @@ To report bugs, please visit http://github.com/aysmedia/whmdw/issues/
 
 
 # License
-WHM Data Warehouse - A simple Data Warehouse for WHM (Web Host Manager) written in PHP & MySQL.  
+WHM Data Warehouse - A Data Warehouse application for WHM (Web Host Manager) written in PHP & MySQL.  
 Copyright (C) 2010 Greg Chetcuti  
 
 WHM Data Warehouse is free software; you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation; either version 2 of the License, or (at your option) any later version.  
