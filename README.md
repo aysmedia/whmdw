@@ -48,11 +48,7 @@ NOTE: Whenever possible we recommend that you use option #1, the git repository 
 
 4. Open the WHM Data Warehouse in a web browser and click on the "Rebuild Data Warehouse" link  
 
-5. A new window browser window will open, which will run a script that creates the initial data warehouse  
-
-6. If you want to see the progress on the initial data warehouse build, you can flip back to the original window and hit refresh  
-
-7. Depending on how much information you have on your server, it may take a few minutes for the build to complete  
+5. Depending on how much information you have on your server, it may take a few minutes for the build to complete  
 
 
 # Installation (Optional)
