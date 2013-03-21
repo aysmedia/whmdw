@@ -15,16 +15,16 @@
 // You should have received a copy of the GNU General Public License along with WHM Data Warehouse. If not,
 // please see http://www.gnu.org/licenses/
 ?>
-<?php include($full_server_path . "/_includes/auth/session-start.inc.php"); ?>
-<?php include($full_server_path . "/_includes/auth/login-check.inc.php"); ?>
-<?php include($full_server_path . "/_includes/top.inc.php"); ?>
-<?php include($full_server_path . "/_includes/config.inc.php"); ?>
-<?php include($full_server_path . "/_includes/database.inc.php"); ?>
+<?php include($full_server_path . "_includes/auth/session-start.inc.php"); ?>
+<?php include($full_server_path . "_includes/auth/login-check.inc.php"); ?>
+<?php include($full_server_path . "_includes/top.inc.php"); ?>
+<?php include($full_server_path . "_includes/config.inc.php"); ?>
+<?php include($full_server_path . "_includes/database.inc.php"); ?>
 <html>
-<head><?php include($full_server_path . "/_includes/head-tags.inc.php"); ?></head>
+<head><?php include($full_server_path . "_includes/head-tags.inc.php"); ?></head>
 <body>
-<?php include($full_server_path . "/_includes/header.inc.php"); ?>
-<font class="section_heading"><?=$section_heading?></font><?php include($full_server_path . "/_includes/menus/whm.inc.php"); ?>
+<?php include($full_server_path . "_includes/header.inc.php"); ?>
+<font class="section_heading"><?=$section_heading?></font><?php include($full_server_path . "_includes/menus/whm.inc.php"); ?>
 <BR><BR>
 <?php
 $sql = "select count(*) as total_count from _dw_whm_accounts";
@@ -123,6 +123,6 @@ if ($zone_list != "") {
 }
 
 ?><BR><BR>
-<?php include($full_server_path . "/_includes/footer.inc.php"); ?>
+<?php include($full_server_path . "_includes/footer.inc.php"); ?>
 </body>
 </html>
