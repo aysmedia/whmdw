@@ -16,8 +16,8 @@
 // please see http://www.gnu.org/licenses/
 ?>
 <?php
-// Full server path to WHM DW (include trailing slash)
-$full_server_path = "/home/user/public_html/whmdw/";
+// Full server path to WHM DW
+$full_server_path = "/home/user/public_html/whmdw/"; // include trailing slash
 
 // MySQL database where the WHM DW data will be stored
 $dbhostname = "localhost";
