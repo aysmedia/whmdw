@@ -27,7 +27,7 @@
 <body onLoad="document.forms[0].elements[0].focus()";>
 <?php
 $domain = $_GET['domain'];
-$search_for = $_POST['search_for'];
+$search_for = $_REQUEST['search_for'];
 ?>
 <?php include($full_server_path . "_includes/header.inc.php"); ?>
 <?php
@@ -45,17 +45,12 @@ if ($domain != "") {
 		$sql = "select *
 				from _dw_whm_accounts
 				where (
-						plan like '%$search_for%' or 
-						theme like '%$search_for%' or 
-						shell like '%$search_for%' or 
-						suspendtime like '%$search_for%' or 
-						ip like '%$search_for%' or 
 						domain like '%$search_for%' or 
-						partition like '%$search_for%' or 
+						ip like '%$search_for%' or 
+						owner like '%$search_for%' or 
 						user like '%$search_for%' or 
-						suspendreason like '%$search_for%' or 
-						email = '$search_for' or 
-						owner like '%$search_for%'
+						email like '%$search_for%' or 
+						shell like '%$search_for%'
 						)
 				order by unix_startdate desc";
 	
@@ -116,7 +111,10 @@ if($result) {
 			$visible_zonefile = wordwrap($row_zone->zonefile, 20, "<BR>", true);
 		}
 
-		echo "<BR><strong>DNS Zone:</strong><BR><a class=\"covert_link\" href=\"list-dns-zones.php?domain=$row->domain\">" . $visible_zonefile . "</a>";
+		if ($visible_zonefile != "") {
+			echo "<BR><strong>DNS Zone:</strong><BR><a class=\"covert_link\" href=\"list-dns-zones.php?domain=$row->domain\">" . $visible_zonefile . "</a>";
+			$visible_zonefile = "";
+		}
 
 		echo "</td>";
 		echo "<td>" . 

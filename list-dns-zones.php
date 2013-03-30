@@ -27,7 +27,7 @@
 <body onLoad="document.forms[0].elements[0].focus()";>
 <?php
 $domain = $_GET['domain'];
-$search_for = $_POST['search_for'];
+$search_for = $_REQUEST['search_for'];
 ?>
 <?php include($full_server_path . "_includes/header.inc.php"); ?>
 <?php
@@ -114,7 +114,16 @@ if($result) {
 		}
 
 		echo "<tr height=\"75\" valign=\"top\" onMouseOver=\"this.bgColor='" . $table_highlight_color . "';\" onMouseOut=\"this.bgColor='#FFFFFF';\">";
-		echo "<td><font class=\"list_marker\">" . $list_marker . "</font><!a target=\"_blank\" href=\"http://" . $row->domain . "\"><strong>" . $visible_zonefile . "</strong><!/a><BR><BR><strong>Domain:</strong><BR><a class=\"covert_link\" href=\"list-accounts.php?domain=" . $row->domain . "\">" . $visible_domain . "</a>";
+		echo "<td><font class=\"list_marker\">" . $list_marker . "</font><!a target=\"_blank\" href=\"http://" . $row->domain . "\"><strong>" . $visible_zonefile . "</strong><!/a>";
+		
+		$sql_temp = "SELECT id
+					 FROM _dw_whm_accounts
+					 WHERE domain = '$row->domain'";
+		$result_temp = mysql_query($sql_temp,$connection);
+
+		if (mysql_num_rows($result_temp) > 0) { 
+			echo "<BR><BR><strong>Domain:</strong><BR><a class=\"covert_link\" href=\"list-accounts.php?domain=" . $row->domain . "\">" . $visible_domain . "</a>";
+		}
 		
 		echo "</td>";
 		echo "<td>";
