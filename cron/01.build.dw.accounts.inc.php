@@ -49,25 +49,13 @@ $sql = "CREATE TABLE IF NOT EXISTS _dw_whm_accounts (
 
 $result = mysql_query($sql,$connection) or die(mysql_error());
 
-if ($_SERVER['HTTP_HOST'] != "demos.aysmedia.com") {
+$api_call = "/xml-api/listaccts?searchtype=domain&search=";
+include("../_includes/code/api/whm.api.call.inc.php"); 
+$xml = simplexml_load_string($result);
 
-	$api_call = "/xml-api/listaccts?searchtype=domain&search=";
-	include("../_includes/code/api/whm.api.call.inc.php"); 
-	$xml = simplexml_load_string($result);
+foreach($xml->acct as $hit){
 
-	foreach($xml->acct as $hit){
-	
-		$sql = "insert into _dw_whm_accounts (domain, ip, owner, user, email, disklimit, diskused, partition, maxaddons, maxftp, maxlst, maxparked, maxpop, maxsql, maxsub, plan, theme, shell, startdate, unix_startdate, suspended, suspendreason, suspendtime) values('$hit->domain', '$hit->ip', '$hit->owner', '$hit->user', '$hit->email', '$hit->disklimit', '$hit->diskused', '$hit->partition', '$hit->maxaddons', '$hit->maxftp', '$hit->maxlst', '$hit->maxparked', '$hit->maxpop', '$hit->maxsql', '$hit->maxsub', '$hit->plan', '$hit->theme', '$hit->shell', '$hit->startdate', '$hit->unix_startdate', '$hit->suspended', '$hit->suspendreason', '$hit->suspendtime')";
-		$result = mysql_query($sql,$connection) or die(mysql_error());
-	
-	}
-
-} else {
-
-	$sql = "insert into _dw_whm_accounts (domain, ip, owner, user, email, disklimit, diskused, partition, maxaddons, maxftp, maxlst, maxparked, maxpop, maxsql, maxsub, plan, theme, shell, startdate, unix_startdate, suspended, suspendreason, suspendtime) VALUES
-			('aysmedia.com', '69.167.168.205', 'root', 'aysmedia', 'privacy@aysmedia.com', 'unlimited', '163M', 'home', '*unknown*', 'unlimited', 'unlimited', '*unknown*', 'unlimited', 'unlimited', 'unlimited', 'Unlimited', 'x3', '/bin/bash', '2010 Mar 20 08:43', 1279827578, '0', 'not suspended', 'null'),
-			('aysmedia.ca', '69.167.168.206', 'root', 'aysmedi2', 'privacy@aysmedia.com', 'unlimited', '1M', 'home', '*unknown*', 'unlimited', 'unlimited', '*unknown*', 'unlimited', 'unlimited', 'unlimited', 'Unlimited', 'x3', '/usr/local/cpanel/bin/noshell', '2010 Mar 20 13:05', 1269104715, '0', 'not suspended', 'null'),
-			('ays.me', '69.167.168.206', 'root', 'aysme', 'privacy@aysmedia.com', 'unlimited', '1M', 'home', '*unknown*', 'unlimited', 'unlimited', '*unknown*', 'unlimited', 'unlimited', 'unlimited', 'Unlimited', 'x3', '/usr/local/cpanel/bin/noshell', '2010 Jul 22 15:39', 1269089020, '0', 'not suspended', 'null');";
+	$sql = "insert into _dw_whm_accounts (domain, ip, owner, user, email, disklimit, diskused, partition, maxaddons, maxftp, maxlst, maxparked, maxpop, maxsql, maxsub, plan, theme, shell, startdate, unix_startdate, suspended, suspendreason, suspendtime) values('$hit->domain', '$hit->ip', '$hit->owner', '$hit->user', '$hit->email', '$hit->disklimit', '$hit->diskused', '$hit->partition', '$hit->maxaddons', '$hit->maxftp', '$hit->maxlst', '$hit->maxparked', '$hit->maxpop', '$hit->maxsql', '$hit->maxsub', '$hit->plan', '$hit->theme', '$hit->shell', '$hit->startdate', '$hit->unix_startdate', '$hit->suspended', '$hit->suspendreason', '$hit->suspendtime')";
 	$result = mysql_query($sql,$connection) or die(mysql_error());
 
 }

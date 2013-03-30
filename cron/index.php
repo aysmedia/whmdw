@@ -19,17 +19,21 @@
 <?php include("../_includes/database.inc.php"); ?>
 <?php include("../_includes/current-timestamp.inc.php"); ?>
 <?php 
-// ------------------------------------------------------------------------
-// Execute the DW Builds
-// ------------------------------------------------------------------------
-//  Accounts
-	include("01.build.dw.accounts.inc.php"); 
-// ------------------------------------------------------------------------
-//  DNS Zones
-	include("02.build.dw.dns.zones.inc.php"); 
-// ------------------------------------------------------------------------
-//  DNS Zones (Data)
-	include("03.build.dw.dns.records.inc.php"); 
-// ------------------------------------------------------------------------
+if ($_SERVER['HTTP_HOST'] != "demos.aysmedia.com") {
+
+	// ------------------------------------------------------------------------
+	// Execute the DW Builds
+	// ------------------------------------------------------------------------
+	//  Accounts
+		include("01.build.dw.accounts.inc.php"); 
+	// ------------------------------------------------------------------------
+	//  DNS Zones
+		include("02.build.dw.dns.zones.inc.php"); 
+	// ------------------------------------------------------------------------
+	//  DNS Zones (Data)
+		include("03.build.dw.dns.records.inc.php"); 
+	// ------------------------------------------------------------------------
+
+}
 ?>
 The WHM Data Warehouse has been rebuilt.
