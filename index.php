@@ -91,7 +91,7 @@ $sql = "select domain
 $result = mysql_query($sql,$connection) or die(mysql_error());
 
 while ($row = mysql_fetch_object($result)) {
-	$account_list_raw .= $row->domain . ", ";
+	$account_list_raw .= "<a href=\"list-accounts.php?domain=" . $row->domain . "\">" . $row->domain . "</a>, ";
 }
 
 $account_list = substr($account_list_raw, 0, -2);
@@ -111,7 +111,7 @@ $sql = "select domain
 $result = mysql_query($sql,$connection) or die(mysql_error());
 
 while ($row = mysql_fetch_object($result)) {
-	$zone_list_raw .= $row->domain . ", ";
+	$zone_list_raw .= "<a href=\"list-dns-zones.php?domain=" . $row->domain . "\">" . $row->domain . "</a>, ";
 }
 
 $zone_list = substr($zone_list_raw, 0, -2);
