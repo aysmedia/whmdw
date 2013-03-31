@@ -23,6 +23,7 @@ $sql = "CREATE TABLE IF NOT EXISTS _dw_whm_dns_zones (
   id int(10) NOT NULL auto_increment,
   domain varchar(255) NOT NULL,
   zonefile varchar(255) NOT NULL,
+  insert_time datetime NOT NULL,
   PRIMARY KEY  (id)
 ) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=1";
 
@@ -34,7 +35,9 @@ $xml = simplexml_load_string($result);
 
 foreach($xml->zone as $hit){
 
-	$sql = "insert into _dw_whm_dns_zones (domain, zonefile) values('$hit->domain', '$hit->zonefile')";
+	$sql = "INSERT INTO _dw_whm_dns_zones 
+				(domain, zonefile, insert_time) VALUES 
+				('$hit->domain', '$hit->zonefile', '$current_timestamp')";
 	$result = mysql_query($sql,$connection) or die(mysql_error());
 
 }

@@ -44,6 +44,7 @@ $sql = "CREATE TABLE IF NOT EXISTS _dw_whm_accounts (
   suspended varchar(255) NOT NULL,
   suspendreason varchar(255) NOT NULL,
   suspendtime varchar(255) NOT NULL,
+  insert_time datetime NOT NULL,
   PRIMARY KEY  (id)
 ) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=1";
 
@@ -55,7 +56,9 @@ $xml = simplexml_load_string($result);
 
 foreach($xml->acct as $hit){
 
-	$sql = "insert into _dw_whm_accounts (domain, ip, owner, user, email, disklimit, diskused, partition, maxaddons, maxftp, maxlst, maxparked, maxpop, maxsql, maxsub, plan, theme, shell, startdate, unix_startdate, suspended, suspendreason, suspendtime) values('$hit->domain', '$hit->ip', '$hit->owner', '$hit->user', '$hit->email', '$hit->disklimit', '$hit->diskused', '$hit->partition', '$hit->maxaddons', '$hit->maxftp', '$hit->maxlst', '$hit->maxparked', '$hit->maxpop', '$hit->maxsql', '$hit->maxsub', '$hit->plan', '$hit->theme', '$hit->shell', '$hit->startdate', '$hit->unix_startdate', '$hit->suspended', '$hit->suspendreason', '$hit->suspendtime')";
+	$sql = "INSERT INTO _dw_whm_accounts 
+				(domain, ip, owner, user, email, disklimit, diskused, partition, maxaddons, maxftp, maxlst, maxparked, maxpop, maxsql, maxsub, plan, theme, shell, startdate, unix_startdate, suspended, suspendreason, suspendtime, insert_time) VALUES 
+				('$hit->domain', '$hit->ip', '$hit->owner', '$hit->user', '$hit->email', '$hit->disklimit', '$hit->diskused', '$hit->partition', '$hit->maxaddons', '$hit->maxftp', '$hit->maxlst', '$hit->maxparked', '$hit->maxpop', '$hit->maxsql', '$hit->maxsub', '$hit->plan', '$hit->theme', '$hit->shell', '$hit->startdate', '$hit->unix_startdate', '$hit->suspended', '$hit->suspendreason', '$hit->suspendtime', '$current_timestamp')";
 	$result = mysql_query($sql,$connection) or die(mysql_error());
 
 }

@@ -42,14 +42,15 @@ $sql = "CREATE TABLE IF NOT EXISTS _dw_whm_dns_records (
   ttl int(10) NOT NULL,
   type varchar(255) NOT NULL,
   txtdata varchar(255) NOT NULL,
+  insert_time datetime NOT NULL,
   PRIMARY KEY  (id)
 ) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=1";
 
 $result = mysql_query($sql,$connection) or die(mysql_error());
 
-$sql_temp = "select domain
-		from _dw_whm_accounts
-		order by domain asc";
+$sql_temp = "SELECT domain
+			 	FROM _dw_whm_accounts
+			 	ORDER BY domain asc";
 $result_temp = mysql_query($sql_temp,$connection) or die(mysql_error());
 
 while ($row_temp = mysql_fetch_object($result_temp)) {
@@ -60,29 +61,31 @@ while ($row_temp = mysql_fetch_object($result_temp)) {
 	
 	foreach($xml->result->record as $hit){
 
-		$sql = "insert into _dw_whm_dns_records (domain, name, line, nlines, address, class, exchange, preference, expire, minimum, cname, mname, nsdname, raw, refresh, retry, rname, serial, ttl, type, txtdata) values('$row_temp->domain', '$hit->name', '$hit->Line', '$hit->Lines', '$hit->address', '$hit->class', '$hit->exchange', '$hit->preference', '$hit->expire', '$hit->minimum', '$hit->cname', '$hit->mname', '$hit->nsdname', '$hit->raw', '$hit->refresh', '$hit->retry', '$hit->rname', '$hit->serial', '$hit->ttl', '$hit->type', '$hit->txtdata')";
+		$sql = "INSERT INTO _dw_whm_dns_records 
+					(domain, name, line, nlines, address, class, exchange, preference, expire, minimum, cname, mname, nsdname, raw, refresh, retry, rname, serial, ttl, type, txtdata, insert_time) VALUES 
+					('$row_temp->domain', '$hit->name', '$hit->Line', '$hit->Lines', '$hit->address', '$hit->class', '$hit->exchange', '$hit->preference', '$hit->expire', '$hit->minimum', '$hit->cname', '$hit->mname', '$hit->nsdname', '$hit->raw', '$hit->refresh', '$hit->retry', '$hit->rname', '$hit->serial', '$hit->ttl', '$hit->type', '$hit->txtdata', '$current_timestamp')";
 		$result = mysql_query($sql,$connection) or die(mysql_error());
 	
 	}
 
 }
 
-$sql = "delete from _dw_whm_dns_records 
-		 where type = ':RAW'
-		 and raw = ''";
+$sql = "DELETE FROM _dw_whm_dns_records 
+			WHERE type = ':RAW'
+			AND raw = ''";
 $result = mysql_query($sql,$connection) or die(mysql_error());
 
-$sql = "delete from _dw_whm_dns_records 
-		 where type = 'SRV'";
+$sql = "DELETE FROM _dw_whm_dns_records 
+			WHERE type = 'SRV'";
 $result = mysql_query($sql,$connection) or die(mysql_error());
 
-$sql = "update _dw_whm_dns_records 
-		 set type = 'COMMENT'
-		 where type = ':RAW'";
+$sql = "UPDATE _dw_whm_dns_records 
+			SET type = 'COMMENT'
+			WHERE type = ':RAW'";
 $result = mysql_query($sql,$connection) or die(mysql_error());
 
-$sql = "update _dw_whm_dns_records 
-		 set type = 'ZONE TTL'
-		 where type = '\$TTL'";
+$sql = "UPDATE _dw_whm_dns_records 
+			SET type = 'ZONE TTL'
+			WHERE type = '\$TTL'";
 $result = mysql_query($sql,$connection) or die(mysql_error());
 ?>
