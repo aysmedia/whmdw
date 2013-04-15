@@ -1,7 +1,7 @@
 # WHM Data Warehouse
     Project Home: http://aysmedia.com/code/whmdw/  
     Project Demo: http://demos.aysmedia.com/whmdw/  
-    Code Home: http://github.com/aysmedia/whmdw/  
+    Source Code: http://github.com/aysmedia/whmdw/  
 
 
 # About
