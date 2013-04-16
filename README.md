@@ -25,9 +25,9 @@ So go ahead, take our live demo for a test drive before you install! http://demo
 # Downloading
 You have two options for downloading the WHM Data Warehouse.  
 
-NOTE: Whenever possible we recommend that you use option #1, the git repository download directly from your server.  
+NOTE: Whenever possible we recommend that you use option #1, the git repository download directly from your server. Not only is it a nice quick install, but it makes upgrading a breeze (more info below).  
 
-1. Use git right from your server to retrieve the source code. To do so, change to the directory where you want to install and run the following command:  
+1. Use git right from your server to retrieve the source code. To do so, change to the directory where you want to install the WHM Data Warehouse and run the following command:  
 
         git clone git://github.com/aysmedia/whmdw.git .  
 
