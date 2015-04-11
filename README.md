@@ -1,8 +1,8 @@
-### NOTE: The WHM Data Warehouse project has been replaced by the DomainMOD project. DomainMOD is an open source application used to manage your domains and other web resources in a central location, and the WHM Data Warehouse project has been completely integrated into it, along with some additional features, such as a user authentication system.
+### NOTE: The WHM Data Warehouse has been replaced by the DomainMOD project. DomainMOD is an open source application used to manage your domains and other internet assets in a central location. The WHM Data Warehouse project has been completely integrated into DomainMOD, along with some additional features, such as a user authentication system.
 
 For more information visit: http://github.com/domainmod/domainmod
 
-### DomainMOD
+# DomainMOD
     Project Home: http://domainmod.org
     Project Demo: http://demo.domainmod.org
     Source Code: http://github.com/domainmod/domainmod
