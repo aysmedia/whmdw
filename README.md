@@ -1,4 +1,4 @@
-### NOTE: The WHM Data Warehouse has been replaced by the DomainMOD project. DomainMOD is an open source application used to manage your domains and other internet assets in a central location. The WHM Data Warehouse project has been completely integrated into DomainMOD, along with some additional features, such as a user authentication system.
+### Archived: The WHM Data Warehouse has been replaced by the DomainMOD project. DomainMOD is an open source application used to manage your domains and other internet assets in a central location. The WHM Data Warehouse project has been completely integrated into DomainMOD, along with some additional features, such as a user authentication system.
 
 For more information visit: http://github.com/domainmod/domainmod
 
@@ -8,8 +8,6 @@ For more information visit: http://github.com/domainmod/domainmod
     Source Code: http://github.com/domainmod/domainmod
 
 # WHM Data Warehouse
-    Project Home: http://aysmedia.com/code/whmdw/
-    Project Demo: http://demos.aysmedia.com/whmdw/
     Source Code: http://github.com/aysmedia/whmdw/
 
 
@@ -25,12 +23,6 @@ And just like that, the WHM Data Warehouse was born. We figured if we can benefi
 As this project is in its infancy, not all available WHM information is pulled into the data warehouse. To see which information is currently being retrieved please see the 'Currently Supported' section below.  
 
 
-# Live Demo
-Not sure if the WHM Data Warehouse is what you're looking for? Don't want to waste your time installing it only to find out that it's not? As developers ourselves, we hate when that happens, so AYS Media always tries to run live demos of our products so that we don't waste your time.  
-
-So go ahead, take our live demo for a test drive before you install! http://demos.aysmedia.com/whmdw/  
-
-
 # Downloading
 You have two options for downloading the WHM Data Warehouse.  
 
@@ -38,7 +30,7 @@ NOTE: Whenever possible we recommend that you use option #1, the git repository 
 
 1. Use git right from your server to retrieve the source code. To do so, change to the directory where you want to install the WHM Data Warehouse and run the following command:  
 
-        git clone git://github.com/aysmedia/whmdw.git  
+        git clone https://github.com/aysmedia/whmdw.git  
 
     The WHM Data Warehouse files will now be saved in a local directory called /whmdw/.  
 
@@ -113,13 +105,11 @@ domain, name, line, nlines, address, class, exchange, preference, expire, minimu
 
 
 # References
-WHM & cPanel: http://cpanel.net/products/cpanelwhm/  
+WHM & cPanel: https://cpanel.net/  
 
 
 # Support
-If you have any questions or comments please visit http://aysmedia.com or email us at code@aysmedia.com  
-
-To report bugs, please visit http://github.com/aysmedia/whmdw/issues/  
+This project is archived and no longer supported.  
 
 
 # License
